@@ -327,7 +327,9 @@ doc.fillColor(COLOR_INK)
 doc.end();
 
 writeStream.on('finish', () => {
-  const shortOutputPath = path.join(__dirname, 'public', 'resume.pdf');
+  const shortOutputPath = path.join(__dirname, 'public', 'resume.pdf, and resume');
+  const cleanOutputPath = path.join(__dirname, 'public', 'resume');
   fs.copyFileSync(outputPath, shortOutputPath);
-  console.log('PDF generation complete! Wrote Anvesh_Seeli_Resume.pdf and resume.pdf');
+  fs.copyFileSync(outputPath, cleanOutputPath);
+  console.log('PDF generation complete! Wrote Anvesh_Seeli_Resume.pdf and resume.pdf, and resume');
 });
