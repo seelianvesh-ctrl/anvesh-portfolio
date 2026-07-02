@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import BrandStrip from "./components/BrandStrip";
@@ -12,11 +11,8 @@ import Credentials from "./components/Credentials";
 import GrowthNotes from "./components/GrowthNotes";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
-import ResumeModal from "./components/ResumeModal";
 
 export default function App() {
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
-
   return (
     <div className="relative min-h-screen bg-cream text-ink select-none font-body antialiased selection:bg-terracotta/20 selection:text-ink">
       {/* High-fidelity tactile paper noise overlay */}
@@ -28,7 +24,7 @@ export default function App() {
       {/* Main Container */}
       <main className="relative z-10">
         {/* 1. Hero banner with high-impact serif headline and key stats */}
-        <Hero onOpenResume={() => setIsResumeOpen(true)} />
+        <Hero />
 
         {/* 2. Logo ribbon for brands with error protection */}
         <BrandStrip />
@@ -63,9 +59,6 @@ export default function App() {
         {/* 12. Contact CTAs & dark footer */}
         <Contact />
       </main>
-
-      {/* Interactive Resume View/Download Overlay */}
-      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </div>
   );
 }
