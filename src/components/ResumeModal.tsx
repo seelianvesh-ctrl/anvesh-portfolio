@@ -1,4 +1,4 @@
-import { X } from "lucide-react";
+import { Download, X } from "lucide-react";
 import { useEffect } from "react";
 
 interface ResumeModalProps {
@@ -7,6 +7,15 @@ interface ResumeModalProps {
 }
 
 export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
+  const handleDownloadResumeClick = () => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "resume_download", {
+        location: "resume_modal",
+        link_url: "/resume.pdf",
+      });
+    }
+  };
+
   // Prevent scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -27,6 +36,18 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
         
         {/* Controls */}
         <div className="absolute top-4 right-4 flex items-center space-x-3">
+          <a
+            href="/resume.pdf"
+            download="Anvesh_Seeli_Resume.pdf"
+            onClick={handleDownloadResumeClick}
+            className="flex items-center gap-2 rounded border border-hairline px-3 py-2 text-xs font-semibold uppercase tracking-wide text-muted-ink hover:text-ink hover:border-ink transition-colors cursor-pointer"
+            aria-label="Download resume PDF"
+            id="btn-download-resume-modal"
+          >
+            <Download size={14} />
+            Download PDF
+          </a>
+
           <button
             onClick={onClose}
             className="flex h-8 w-8 items-center justify-center rounded-full border border-hairline text-muted-ink hover:text-ink hover:border-ink transition-colors cursor-pointer"
@@ -49,7 +70,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               Performance Marketing & Growth | Paid Media, Measurement & Commerce-led Growth
             </p>
             <p className="text-xs text-muted-ink font-sans">
-              +91 81431 30661 &nbsp;·&nbsp; seelianvesh@gmail.com &nbsp;·&nbsp; linkedin.com/in/anvesh-seeli &nbsp;·&nbsp; anvesh-portfolio.lovable.app
+              +91 81431 30661 &nbsp;·&nbsp; seelianvesh@gmail.com &nbsp;·&nbsp; linkedin.com/in/anvesh-seeli &nbsp;·&nbsp; anveshseeli.com
             </p>
           </div>
 

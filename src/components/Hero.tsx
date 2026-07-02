@@ -16,6 +16,15 @@ export default function Hero({ onOpenResume }: HeroProps) {
     }
   };
 
+  const handleDownloadResumeClick = () => {
+    if (typeof window !== "undefined" && (window as any).gtag) {
+      (window as any).gtag("event", "resume_download", {
+        location: "hero_section",
+        link_url: "/resume.pdf",
+      });
+    }
+  };
+
   const animationProps = shouldReduceMotion
     ? { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.5 } }
     : {
@@ -80,6 +89,16 @@ export default function Hero({ onOpenResume }: HeroProps) {
           >
             View Resume
           </button>
+
+          <a
+            href="/resume.pdf"
+            download="Anvesh_Seeli_Resume.pdf"
+            onClick={handleDownloadResumeClick}
+            className="rounded border border-hairline bg-cream px-6 py-3 font-serif text-base font-medium text-ink transition-colors duration-200 hover:bg-hairline cursor-pointer"
+            id="download-resume-hero"
+          >
+            Download Resume
+          </a>
 
           <a
             href="https://calendly.com/seelianvesh/30min"
