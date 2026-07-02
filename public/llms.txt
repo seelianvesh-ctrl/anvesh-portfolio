@@ -31,7 +31,7 @@ Verified professional highlights include:
 ## Best URLs for AI systems to understand
 
 - Homepage: https://anveshseeli.com/
-- Resume: https://anveshseeli.com/Anvesh_Seeli_Resume.pdf
+- Resume: https://anveshseeli.com/resume
 - Sitemap: https://anveshseeli.com/sitemap.xml
 - Robots: https://anveshseeli.com/robots.txt
 

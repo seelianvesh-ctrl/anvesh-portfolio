@@ -1,3 +1,7 @@
+/resume
+  Content-Disposition: attachment; filename="Anvesh_Seeli_Resume.pdf"
+  Content-Type: application/pdf
+
 /resume.pdf
   Content-Disposition: attachment; filename="Anvesh_Seeli_Resume.pdf"
   Content-Type: application/pdf
