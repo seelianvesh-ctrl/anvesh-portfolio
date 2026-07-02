@@ -82,6 +82,13 @@ export default function Header() {
               {item.label}
             </button>
           ))}
+          <a
+            href="/articles/"
+            className="font-body text-base tracking-wide text-muted-ink transition-colors duration-200 hover:text-ink"
+            id="nav-item-articles"
+          >
+            Articles
+          </a>
         </nav>
 
         {/* Action Button */}
@@ -132,6 +139,14 @@ export default function Header() {
                 {item.label}
               </button>
             ))}
+            <a
+              href="/articles/"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-left font-body text-lg py-1 transition-colors text-muted-ink"
+              id="mobile-nav-item-articles"
+            >
+              Articles
+            </a>
             <div className="pt-4 border-t border-hairline">
               <a
                 href="https://calendly.com/seelianvesh/30min"
