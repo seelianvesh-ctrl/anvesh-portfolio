@@ -40,7 +40,7 @@ doc.moveDown(0.2);
 doc.fontSize(8.5)
    .font('Helvetica')
    .fillColor(COLOR_MUTED)
-   .text('+91 81431 30661  |  seelianvesh@gmail.com  |  linkedin.com/in/anvesh-seeli  |  anvesh-portfolio.lovable.app', { align: 'center' });
+   .text('+91 81431 30661  |  seelianvesh@gmail.com  |  linkedin.com/in/anvesh-seeli  |  anveshseeli.com', { align: 'center' });
 
 doc.moveDown(0.5);
 
@@ -325,4 +325,9 @@ doc.fillColor(COLOR_INK)
    .text('Google Ads, Meta Ads, Performance Max, YouTube, DV360, Programmatic, Instagram Shop, GA4, SQL, Power BI, Amplitude, Singular, Cube.', { lineGap: 1.5 });
 
 doc.end();
-console.log('PDF generation complete!');
+
+writeStream.on('finish', () => {
+  const shortOutputPath = path.join(__dirname, 'public', 'resume.pdf');
+  fs.copyFileSync(outputPath, shortOutputPath);
+  console.log('PDF generation complete! Wrote Anvesh_Seeli_Resume.pdf and resume.pdf');
+});
