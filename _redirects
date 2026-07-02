@@ -1,0 +1,15 @@
+# Keep the root domain as the preferred SEO version
+https://www.anveshseeli.com/* https://anveshseeli.com/:splat 301
+
+# Clean source-specific landing URLs for sharing/tracking without ugly UTMs
+/linkedin /index.html 200
+/github /index.html 200
+/email /index.html 200
+/job /index.html 200
+/resume-source /index.html 200
+
+# Short resume PDF URL
+/resume.pdf /Anvesh_Seeli_Resume.pdf 301
+
+# Single-page app fallback
+/* /index.html 200
