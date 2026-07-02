@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GA4 and GTM tracking audit: what to check before trusting your data | Anvesh Seeli</title>
+  <meta name="description" content="A GA4 and GTM audit checks whether the right events are firing, firing once, carrying the right parameters and matching the business actions that actually " />
+  <link rel="canonical" href="https://anveshseeli.com/articles/ga4-gtm-tracking-audit.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="GA4 and GTM tracking audit: what to check before trusting your data" />
+  <meta property="og:description" content="A GA4 and GTM audit checks whether the right events are firing, firing once, carrying the right parameters and matching the business actions that actually matter. If this layer is " />
+  <meta property="og:url" content="https://anveshseeli.com/articles/ga4-gtm-tracking-audit.html" />
+  <meta property="og:image" content="https://anveshseeli.com/og-anvesh-seeli.jpg" />
+  <link rel="stylesheet" href="/articles/style.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "GA4 and GTM tracking audit: what to check before trusting your data", "description": "A GA4 and GTM audit checks whether the right events are firing, firing once, carrying the right parameters and matching the business actions that actually matter. If this layer is wrong, CAC, ROAS, funnel conversion and attribution debates become unstable before the media team even begins optimizing.", "author": {"@type": "Person", "name": "Anvesh Seeli", "url": "https://anveshseeli.com"}, "datePublished": "2026-07-02", "dateModified": "2026-07-02", "image": "https://anveshseeli.com/og-anvesh-seeli.jpg", "mainEntityOfPage": "https://anveshseeli.com/articles/ga4-gtm-tracking-audit.html"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I know if GA4 tracking is wrong?", "acceptedAnswer": {"@type": "Answer", "text": "Warning signs include sudden conversion spikes, unexplained drops, duplicate form submissions, missing downloads, platform numbers that seem too good to be true, or reports that do not match CRM/sales reality."}}, {"@type": "Question", "name": "Is GTM necessary for GA4?", "acceptedAnswer": {"@type": "Answer", "text": "Not always, but GTM makes event management, pixels and marketing tags easier to maintain without editing site code every time."}}, {"@type": "Question", "name": "Should every event be a key event?", "acceptedAnswer": {"@type": "Answer", "text": "No. Key events should be reserved for actions that represent real business value or serious intent."}}]}]}</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><a class="brand" href="/">Anvesh Seeli</a><nav class="navlinks"><a href="/articles/">Articles</a><a href="/resume">Resume</a><a href="https://calendly.com/seelianvesh/30min">Book a call</a></nav></div></div>
+  <header>
+    <a class="small" href="/articles/">← Articles</a>
+    <p class="eyebrow">Performance Marketing Field Notes</p>
+    <h1>GA4 and GTM tracking audit: what to check before trusting your data</h1>
+    <p class="lede">A GA4 and GTM audit checks whether the right events are firing, firing once, carrying the right parameters and matching the business actions that actually matter. If this layer is wrong, CAC, ROAS, funnel conversion and attribution debates become unstable before the media team even begins optimizing.</p>
+    <div class="meta">By Anvesh Seeli · Performance Marketing & Growth · Updated July 2026</div>
+  </header>
+  <main class="wrap">
+    <section class="answer"><h2>Direct answer</h2><p>A GA4 and GTM audit checks whether the right events are firing, firing once, carrying the right parameters and matching the business actions that actually matter. If this layer is wrong, CAC, ROAS, funnel conversion and attribution debates become unstable before the media team even begins optimizing.</p></section>
+    <p>A GA4 and GTM audit checks whether the right events are firing, firing once, carrying the right parameters and matching the business actions that actually matter. If this layer is wrong, CAC, ROAS, funnel conversion and attribution debates become unstable before the media team even begins optimizing.</p>
+<p>I like tracking audits because they force discipline. They are not glamorous, but they decide whether a performance marketer is optimizing reality or fiction.</p>
+<h2>Start with the question: what are we asking the platform to learn?</h2>
+<p>Most brands do not have zero tracking. They have inherited tracking. A previous agency created some events. A developer added a few tags. A campaign needed a quick conversion action. Over time, the account fills with events that nobody fully owns.</p>
+<p>The first question I ask is not whether events are firing. It is: why does this event exist?</p>
+<p>A purchase, qualified lead, app order, consultation booking or resume download can be meaningful. A random button click may not be. When every event is treated as equally important, the optimization system loses direction.</p>
+<h2>What I would check in a GA4/GTM audit</h2>
+<h3>1. Measurement ID and property alignment</h3>
+<p>Confirm that the production website is sending data to the correct GA4 property. This sounds basic, but wrong-property tracking can quietly corrupt reporting.</p>
+<h3>2. Event naming discipline</h3>
+<p>Events should be named clearly and consistently. I prefer lowercase snake_case names like <code>book_call_click</code>, <code>resume_download</code>, <code>lead_submit</code>, <code>purchase</code> or <code>app_order_complete</code>.</p>
+<p>Messy names become reporting debt.</p>
+<h3>3. Duplicate firing</h3>
+<p>Duplicate conversions are dangerous because they make performance look better than it is. Use GTM Preview, GA4 DebugView and Realtime reports to verify that important events fire once per intended action.</p>
+<p>If a form submit fires twice, the business may think conversion rate improved when only the tracking broke.</p>
+<h3>4. Key events and conversion quality</h3>
+<p>Not every event deserves to be a key event. For a portfolio, resume downloads and booking clicks are meaningful. For ecommerce, purchases and qualified checkout events matter. For lead generation, qualified leads matter more than raw form fills.</p>
+<p>If Google Ads optimizes toward weak conversions, the platform can scale the wrong behavior efficiently.</p>
+<h3>5. Enhanced Measurement overlap</h3>
+<p>GA4 can automatically track scrolls, outbound clicks and file downloads. That is useful, but it can overlap with custom GTM events. Decide what should be automatic and what should be custom.</p>
+<h3>6. UTM governance</h3>
+<p>UTM discipline matters because messy naming breaks acquisition reporting. Source, medium, campaign and content should follow a documented convention.</p>
+<p>A bad UTM system is a reporting tax paid every week.</p>
+<h3>7. PII risk</h3>
+<p>Emails, phone numbers and names should not be sent into GA4 URLs, event names or parameters. This is a privacy and governance issue, not just a technical detail.</p>
+<h2>The most common real-world problem</h2>
+<p>The most common problem is not always broken tags. It is broken definitions.</p>
+<p>Marketing says a lead is a conversion. Sales says only qualified leads matter. Finance cares about revenue. The ad platform optimizes form fills. GA4 shows key events. Everyone is technically correct, but nobody is working from the same definition.</p>
+<p>A good audit forces that conversation.</p>
+<h2>The measurement map I like</h2>
+<p>For each important action, document:</p>
+<ul>
+<li>Business question</li>
+<li>User action</li>
+<li>GA4 event name</li>
+<li>Trigger logic</li>
+<li>Event parameters</li>
+<li>Whether it is a key event</li>
+<li>Where it appears in reporting</li>
+<li>Who owns maintenance</li>
+</ul>
+<p>This turns analytics from a black box into an operating system.</p>
+<h2>FAQ</h2>
+<h3>How do I know if GA4 tracking is wrong?</h3>
+<p>Warning signs include sudden conversion spikes, unexplained drops, duplicate form submissions, missing downloads, platform numbers that seem too good to be true, or reports that do not match CRM/sales reality.</p>
+<h3>Is GTM necessary for GA4?</h3>
+<p>Not always, but GTM makes event management, pixels and marketing tags easier to maintain without editing site code every time.</p>
+<h3>Should every event be a key event?</h3>
+<p>No. Key events should be reserved for actions that represent real business value or serious intent.</p>
+    <div class="related"><a href="/articles/">More articles</a><a href="/">Portfolio</a><a href="/resume">Download resume</a></div>
+  </main>
+  <footer><p class="note">Written by Anvesh Seeli. Practical notes on paid media, GA4/GTM measurement, incrementality, CAC, D2C growth and commerce-led acquisition.</p></footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why GA4, Google Ads and Meta rarely match — and what to do about it | Anvesh Seeli</title>
+  <meta name="description" content="GA4, Google Ads and Meta rarely match because they use different attribution windows, identity signals, conversion definitions, reporting logic and modelin" />
+  <link rel="canonical" href="https://anveshseeli.com/articles/why-ga4-google-ads-meta-dont-match.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Why GA4, Google Ads and Meta rarely match — and what to do about it" />
+  <meta property="og:description" content="GA4, Google Ads and Meta rarely match because they use different attribution windows, identity signals, conversion definitions, reporting logic and modeling methods. The goal is no" />
+  <meta property="og:url" content="https://anveshseeli.com/articles/why-ga4-google-ads-meta-dont-match.html" />
+  <meta property="og:image" content="https://anveshseeli.com/og-anvesh-seeli.jpg" />
+  <link rel="stylesheet" href="/articles/style.css" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Why GA4, Google Ads and Meta rarely match — and what to do about it", "description": "GA4, Google Ads and Meta rarely match because they use different attribution windows, identity signals, conversion definitions, reporting logic and modeling methods. The goal is not to force every platform to show the same number. The goal is to know which number should guide which decision.", "author": {"@type": "Person", "name": "Anvesh Seeli", "url": "https://anveshseeli.com"}, "datePublished": "2026-07-02", "dateModified": "2026-07-02", "image": "https://anveshseeli.com/og-anvesh-seeli.jpg", "mainEntityOfPage": "https://anveshseeli.com/articles/why-ga4-google-ads-meta-dont-match.html"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which source should I trust most?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the decision. For platform optimization, use platform data. For business performance, use backend/CRM/finance data. For causal impact, use incrementality testing where possible."}}, {"@type": "Question", "name": "Is GA4 more accurate than ad platforms?", "acceptedAnswer": {"@type": "Answer", "text": "GA4 is not automatically truth. It has its own limitations. But it can provide a more neutral cross-channel view than individual ad platforms."}}, {"@type": "Question", "name": "Should platform ROAS be reported to leadership?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but with caveats. Pair it with blended business metrics, CAC, revenue, margin and incrementality signals."}}]}]}</script>
+</head>
+<body>
+  <div class="topbar"><div class="wrap"><a class="brand" href="/">Anvesh Seeli</a><nav class="navlinks"><a href="/articles/">Articles</a><a href="/resume">Resume</a><a href="https://calendly.com/seelianvesh/30min">Book a call</a></nav></div></div>
+  <header>
+    <a class="small" href="/articles/">← Articles</a>
+    <p class="eyebrow">Performance Marketing Field Notes</p>
+    <h1>Why GA4, Google Ads and Meta rarely match — and what to do about it</h1>
+    <p class="lede">GA4, Google Ads and Meta rarely match because they use different attribution windows, identity signals, conversion definitions, reporting logic and modeling methods. The goal is not to force every platform to show the same number. The goal is to know which number should guide which decision.</p>
+    <div class="meta">By Anvesh Seeli · Performance Marketing & Growth · Updated July 2026</div>
+  </header>
+  <main class="wrap">
+    <section class="answer"><h2>Direct answer</h2><p>GA4, Google Ads and Meta rarely match because they use different attribution windows, identity signals, conversion definitions, reporting logic and modeling methods. The goal is not to force every platform to show the same number. The goal is to know which number should guide which decision.</p></section>
+    <p>GA4, Google Ads and Meta rarely match because they use different attribution windows, identity signals, conversion definitions, reporting logic and modeling methods. The goal is not to force every platform to show the same number. The goal is to know which number should guide which decision.</p>
+<p>Attribution disagreement is normal. Decision paralysis is optional.</p>
+<h2>Why the numbers differ</h2>
+<h3>1. Attribution windows</h3>
+<p>Platforms may count conversions over different time windows after an impression or click. A seven-day click window and a one-day click window will not produce the same result.</p>
+<h3>2. View-through conversions</h3>
+<p>Some platforms count conversions after ad views, not only clicks. This can be useful directionally, but it can also inflate perceived impact if not read carefully.</p>
+<h3>3. Identity and modeling</h3>
+<p>Privacy changes, logged-in environments, cookies, devices and modeled conversions all affect what each system can see.</p>
+<h3>4. Conversion definitions</h3>
+<p>A lead in Meta may not be the same as a key event in GA4 or a qualified lead in CRM. If definitions differ, reports will differ.</p>
+<h3>5. Time of click vs time of conversion</h3>
+<p>Some reports assign conversion to the day of click. Others assign it to the day the conversion happened. This alone can create daily mismatches.</p>
+<h2>A practical example of the problem</h2>
+<p>In a large paid media environment, platform-reported CAC and ROAS looked strong. Actual sales also grew, but not at the same rate as attributed revenue. This did not mean the platform data was worthless. It meant we needed a second layer of truth.</p>
+<p>That second layer came from incrementality testing and business-level reads.</p>
+<h2>What not to do</h2>
+<p>Do not waste weeks trying to make every number match perfectly. That is usually impossible.</p>
+<p>Also do not pick the platform number that makes performance look best. That creates comfort, not clarity.</p>
+<h2>What to do instead</h2>
+<h3>1. Define the role of each source</h3>
+<p>Use platform dashboards for in-platform optimization. Use GA4 for behavior and cross-channel visibility. Use CRM, backend, MMP or finance data for business truth where available. Use incrementality testing for causal confidence.</p>
+<h3>2. Create a measurement hierarchy</h3>
+<p>Decide which system answers which question:</p>
+<ul>
+<li>Google Ads: auction and campaign optimization</li>
+<li>Meta: creative and audience optimization</li>
+<li>GA4: site/app behavior and cross-channel reporting</li>
+<li>CRM/backend: lead quality, sales and retention</li>
+<li>Incrementality tests: causal lift and budget confidence</li>
+</ul>
+<h3>3. Standardize definitions</h3>
+<p>Agree on what counts as a lead, qualified lead, purchase, first-time customer or repeat customer. Without definitions, every report becomes negotiable.</p>
+<h2>My operating POV</h2>
+<p>The job is not to find one magical number. The job is to build enough measurement clarity that budget decisions become less political.</p>
+<p>If a metric cannot tell you whether to scale, hold, cut, fix or test, it may be interesting but not operational.</p>
+<h2>FAQ</h2>
+<h3>Which source should I trust most?</h3>
+<p>It depends on the decision. For platform optimization, use platform data. For business performance, use backend/CRM/finance data. For causal impact, use incrementality testing where possible.</p>
+<h3>Is GA4 more accurate than ad platforms?</h3>
+<p>GA4 is not automatically truth. It has its own limitations. But it can provide a more neutral cross-channel view than individual ad platforms.</p>
+<h3>Should platform ROAS be reported to leadership?</h3>
+<p>Yes, but with caveats. Pair it with blended business metrics, CAC, revenue, margin and incrementality signals.</p>
+    <div class="related"><a href="/articles/">More articles</a><a href="/">Portfolio</a><a href="/resume">Download resume</a></div>
+  </main>
+  <footer><p class="note">Written by Anvesh Seeli. Practical notes on paid media, GA4/GTM measurement, incrementality, CAC, D2C growth and commerce-led acquisition.</p></footer>
+</body>
+</html>
