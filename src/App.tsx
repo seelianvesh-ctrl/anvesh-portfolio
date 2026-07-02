@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import BrandStrip from "./components/BrandStrip";
 import About from "./components/About";
+import EntitySection from "./components/EntitySection";
 import Capabilities from "./components/Capabilities";
 import SelectedWork from "./components/SelectedWork";
 import OperatingSystem from "./components/OperatingSystem";
@@ -31,6 +32,9 @@ export default function App() {
 
         {/* 3. Strategic about / positioning copy */}
         <About />
+
+        {/* 3b. Explicit entity section for SEO/GEO clarity */}
+        <EntitySection />
 
         {/* 4. Core capabilities structured columns */}
         <Capabilities />

@@ -266,27 +266,42 @@ export const GROWTH_NOTES: GrowthNote[] = [
 export const FAQS: FAQItem[] = [
   {
     id: "faq-1",
-    question: "What does a performance marketing consultant do?",
-    answer: "A performance marketing consultant specializes in driving measurable business outcomes, such as customer acquisition, app installs, and incremental sales, using paid digital channels. They optimize ad budgets, evaluate tracking integrity, govern performance agencies, and build quantitative attribution frameworks to align media spend with business profitability."
+    question: "Who is Anvesh Seeli?",
+    answer: "Anvesh Seeli is a performance marketing and growth professional based in India. He has worked across Domino's Pizza India, Mars Pet Nutrition, Brane Enterprises, Prione / Cloudtail, Jumia Egypt and Simply Grow Technologies, with a focus on paid media, measurement, incrementality and commerce-led growth."
   },
   {
     id: "faq-2",
-    question: "What services does Anvesh Seeli offer?",
-    answer: "Anvesh offers comprehensive performance marketing audits, structured growth strategy sprints, measurement and GA4/GTM tracking reviews, and dedicated fractional growth/performance management. These are tailored to consumer brands (QSR, FMCG, D2C) and SaaS businesses seeking senior, strategic media and analytical oversight."
+    question: "What does Anvesh Seeli specialize in?",
+    answer: "Anvesh specializes in performance marketing, growth strategy, Google Ads, Meta Ads, Performance Max, GA4/GTM measurement, attribution clean-up, geo-incrementality testing, CAC optimization, CRM, social commerce and D2C growth."
   },
   {
     id: "faq-3",
-    question: "How much does a growth/performance marketing audit cost?",
-    answer: "Audits are custom-priced based on the scale of your current digital media spend, the complexity of your campaign architecture (Google, Meta, programmatic), and your tracking stack. Each audit is preceded by a brief discovery call to evaluate if there is a clear opportunity to deliver high ROI."
+    question: "What brands and businesses has Anvesh Seeli worked with?",
+    answer: "Anvesh has worked on growth and marketing problems across Domino's Pizza India, Mars Pet Nutrition brands including Pedigree, Whiskas and Sheba, Brane Enterprises, Prione / Cloudtail, Jumia Egypt and Simply Grow Technologies."
   },
   {
     id: "faq-4",
-    question: "Which industries and channels does Anvesh specialize in?",
-    answer: "Anvesh specializes in consumer brands across Quick Service Restaurants (QSR), FMCG/pet nutrition, SaaS product marketing, and retail financial services. He has deep technical expertise in Google Ads (including Performance Max and UAC), Meta Ads, programmatic display, advanced analytics (GA4, GTM, SQL, Power BI, Amplitude), and social commerce platforms."
+    question: "Does Anvesh Seeli offer GA4 and GTM tracking audits?",
+    answer: "Yes. Anvesh works on GA4/GTM tracking reviews, attribution sanity checks, funnel measurement audits and source-of-truth reporting structures to help brands understand whether media spend is generating measurable business outcomes."
   },
   {
     id: "faq-5",
-    question: "How do I work with or hire Anvesh Seeli?",
-    answer: "You can schedule a complimentary 30-minute introductory call using his Calendly link to discuss your current growth challenges. Alternatively, you can send an inquiry directly to his email at seelianvesh@gmail.com, or reach out on LinkedIn to discuss project scope."
+    question: "What is Anvesh Seeli's experience with geo-incrementality?",
+    answer: "At Domino's Pizza India, Anvesh helped run localized geo-incrementality tests to evaluate true media contribution, justify ₹2Cr+ in monthly media spend and prove an 8% incremental revenue lift."
+  },
+  {
+    id: "faq-6",
+    question: "What does a performance marketing consultant do?",
+    answer: "A performance marketing consultant drives measurable business outcomes such as customer acquisition, app installs and incremental sales using paid digital channels. They optimize media budgets, improve conversion rates, evaluate tracking integrity and align CAC, ROAS and LTV with business profitability."
+  },
+  {
+    id: "faq-7",
+    question: "What services does Anvesh Seeli offer?",
+    answer: "Anvesh offers performance marketing audits, growth strategy sprints, GA4/GTM measurement reviews and fractional growth/performance support for consumer brands, D2C businesses, QSR, FMCG, pet nutrition, SaaS and ecommerce teams."
+  },
+  {
+    id: "faq-8",
+    question: "How do I contact or hire Anvesh Seeli?",
+    answer: "You can book a 30-minute introductory call through the Calendly link on this website, download his resume, email him at seelianvesh@gmail.com or connect with him on LinkedIn at linkedin.com/in/anvesh-seeli."
   }
 ];
