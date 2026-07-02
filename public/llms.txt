@@ -49,13 +49,13 @@ https://anveshseeli.com/#contact
 
 These pages provide practical, human-written explanations of Anvesh Seeli's core areas of expertise:
 
-- A performance marketing audit should go beyond platform ROAS: https://anveshseeli.com/articles/performance-marketing-audit-beyond-roas.html
-- GA4 and GTM tracking audit: what to check before trusting your data: https://anveshseeli.com/articles/ga4-gtm-tracking-audit.html
-- Geo-incrementality testing: how to prove paid media lift: https://anveshseeli.com/articles/geo-incrementality-testing.html
-- Acquisition and retention should not be mixed blindly in paid media: https://anveshseeli.com/articles/acquisition-vs-retention-paid-media.html
-- Performance Max needs measurement discipline, not blind trust: https://anveshseeli.com/articles/performance-max-measurement-discipline.html
-- Sampling-led acquisition for D2C, FMCG and pet nutrition brands: https://anveshseeli.com/articles/sampling-led-acquisition.html
-- CAC, ROAS and LTV should not be read in isolation: https://anveshseeli.com/articles/cac-roas-ltv.html
-- What I check in the first 7 days of a paid media account: https://anveshseeli.com/articles/first-7-days-paid-media-account.html
-- Why GA4, Google Ads and Meta rarely match — and what to do about it: https://anveshseeli.com/articles/why-ga4-google-ads-meta-dont-match.html
-- How to present performance marketing results to leadership: https://anveshseeli.com/articles/present-performance-marketing-to-leadership.html
+- A performance marketing audit should go beyond platform ROAS: https://anveshseeli.com/articles/performance-marketing-audit-beyond-roas
+- GA4 and GTM tracking audit: what to check before trusting your data: https://anveshseeli.com/articles/ga4-gtm-tracking-audit
+- Geo-incrementality testing: how to prove paid media lift: https://anveshseeli.com/articles/geo-incrementality-testing
+- Acquisition and retention should not be mixed blindly in paid media: https://anveshseeli.com/articles/acquisition-vs-retention-paid-media
+- Performance Max needs measurement discipline, not blind trust: https://anveshseeli.com/articles/performance-max-measurement-discipline
+- Sampling-led acquisition for D2C, FMCG and pet nutrition brands: https://anveshseeli.com/articles/sampling-led-acquisition
+- CAC, ROAS and LTV should not be read in isolation: https://anveshseeli.com/articles/cac-roas-ltv
+- What I check in the first 7 days of a paid media account: https://anveshseeli.com/articles/first-7-days-paid-media-account
+- Why GA4, Google Ads and Meta rarely match — and what to do about it: https://anveshseeli.com/articles/why-ga4-google-ads-meta-dont-match
+- How to present performance marketing results to leadership: https://anveshseeli.com/articles/present-performance-marketing-to-leadership
