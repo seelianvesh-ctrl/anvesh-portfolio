@@ -1,20 +1,7 @@
 import { motion, useReducedMotion } from "motion/react";
 
-interface HeroProps {
-  onOpenResume: () => void;
-}
-
-export default function Hero({ onOpenResume }: HeroProps) {
+export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
-
-  const handleViewResumeClick = () => {
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "view_resume", {
-        location: "hero_section",
-        link_url: "resume_modal",
-      });
-    }
-  };
 
   const handleDownloadResumeClick = () => {
     if (typeof window !== "undefined" && (window as any).gtag) {
@@ -77,17 +64,6 @@ export default function Hero({ onOpenResume }: HeroProps) {
             className="rounded border border-ink bg-ink px-6 py-3 font-serif text-base font-medium text-cream transition-colors duration-200 hover:bg-ink/90 cursor-pointer"
           >
             View Case Studies
-          </button>
-          
-          <button
-            onClick={() => {
-              handleViewResumeClick();
-              onOpenResume();
-            }}
-            className="rounded border border-hairline bg-cream px-6 py-3 font-serif text-base font-medium text-ink transition-colors duration-200 hover:bg-hairline cursor-pointer"
-            id="view-resume-hero"
-          >
-            View Resume
           </button>
 
           <a
