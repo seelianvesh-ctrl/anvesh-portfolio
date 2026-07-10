@@ -1,14 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Anvesh Seeli">
   <rect width="64" height="64" fill="#25201B"/>
-  <!-- Text optical center at 46% height — matches raster master -->
-  <text x="32" y="29.5"
-        text-anchor="middle"
-        dominant-baseline="central"
-        font-family="Georgia, 'Times New Roman', 'DejaVu Serif', serif"
-        font-size="28"
-        font-weight="700"
-        letter-spacing="-1.2"
-        fill="#F7F3EC">AS</text>
-  <!-- Bar center at 69% height, width ~50% of letter group, gap below glyphs -->
-  <rect x="23" y="42.9" width="18" height="2.6" rx="1.3" fill="#B24A2E"/>
+  <path fill="#F7F3EC" d="M12.36 39.69V38.04H14.03L21.71 19.28H24.98L32.68 38.04H34.62V39.69H25.06V38.04H27.06L25.37 33.87H17.7L16 38.04H18.43V39.69ZM18.37 32.21H24.7L21.56 24.41Z M35.26 38.71V33.87H37Q37.4 36.17 38.87 37.3Q40.35 38.43 42.96 38.43Q45.08 38.43 46.19 37.63Q47.29 36.82 47.29 35.26Q47.29 34.03 46.54 33.35Q45.79 32.67 43.44 32.08L40.38 31.33Q37.38 30.56 36.16 29.2Q34.95 27.84 34.95 25.32Q34.95 22.29 36.96 20.6Q38.98 18.91 42.62 18.91Q44.41 18.91 46.34 19.21Q48.28 19.51 50.36 20.11V24.63H48.62Q48.22 22.52 46.88 21.54Q45.54 20.57 43.07 20.57Q41.05 20.57 40.01 21.27Q38.98 21.97 38.98 23.37Q38.98 24.64 39.69 25.3Q40.4 25.97 43.18 26.68L46.24 27.43Q49.08 28.14 50.36 29.64Q51.64 31.15 51.64 33.79Q51.64 36.88 49.51 38.48Q47.38 40.09 43.23 40.09Q41.24 40.09 39.27 39.75Q37.3 39.41 35.26 38.71Z"/>
+  <rect x="23.0" y="43.1" width="18" height="2.6" rx="1.3" fill="#B24A2E"/>
 </svg>
