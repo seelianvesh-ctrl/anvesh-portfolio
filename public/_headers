@@ -9,3 +9,18 @@
 /Anvesh_Seeli_Resume.pdf
   Content-Disposition: inline; filename="Anvesh_Seeli_Resume.pdf"
   Content-Type: application/pdf
+
+/favicon.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=86400
+
+/icon.ico
+  Content-Type: image/x-icon
+  Cache-Control: public, max-age=86400
+
+/icon.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+
+/brand/*
+  Cache-Control: public, max-age=86400
