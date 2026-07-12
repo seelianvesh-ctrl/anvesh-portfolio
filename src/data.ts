@@ -302,6 +302,6 @@ export const FAQS: FAQItem[] = [
   {
     id: "faq-8",
     question: "How do I contact or hire Anvesh Seeli?",
-    answer: "You can book a 30-minute introductory call through the Calendly link on this website, download his resume, email him at seelianvesh@gmail.com or connect with him on LinkedIn at linkedin.com/in/anvesh-seeli."
+    answer: "You can book a 30-minute introductory call through the Calendly link on this website, download his resume, email him at hi@anveshseeli.com or connect with him on LinkedIn at linkedin.com/in/anvesh-seeli."
   }
 ];
