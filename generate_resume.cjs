@@ -40,7 +40,7 @@ doc.moveDown(0.2);
 doc.fontSize(8.5)
    .font('Helvetica')
    .fillColor(COLOR_MUTED)
-   .text('+91 81431 30661  |  seelianvesh@gmail.com  |  linkedin.com/in/anvesh-seeli  |  anveshseeli.com', { align: 'center' });
+   .text('+91 81431 30661  |  hi@anveshseeli.com  |  linkedin.com/in/anvesh-seeli  |  anveshseeli.com', { align: 'center' });
 
 doc.moveDown(0.5);
 
