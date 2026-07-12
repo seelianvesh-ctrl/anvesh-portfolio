@@ -71,7 +71,7 @@ export default function Contact() {
 
             {/* Email direct contact */}
             <a
-              href="mailto:seelianvesh@gmail.com"
+              href="mailto:hi@anveshseeli.com"
               onClick={() => {
                 if (typeof window !== "undefined" && (window as any).gtag) {
                   (window as any).gtag("event", "email_click");
@@ -89,7 +89,7 @@ export default function Contact() {
                     Direct Inquiry
                   </span>
                   <span className="font-serif text-base font-normal text-cream">
-                    seelianvesh@gmail.com
+                    hi@anveshseeli.com
                   </span>
                 </div>
               </div>

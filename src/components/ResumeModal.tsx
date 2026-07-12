@@ -70,7 +70,7 @@ export default function ResumeModal({ isOpen, onClose }: ResumeModalProps) {
               Performance Marketing & Growth | Paid Media, Measurement & Commerce-led Growth
             </p>
             <p className="text-xs text-muted-ink font-sans">
-              +91 81431 30661 &nbsp;·&nbsp; seelianvesh@gmail.com &nbsp;·&nbsp; linkedin.com/in/anvesh-seeli &nbsp;·&nbsp; anveshseeli.com
+              +91 81431 30661 &nbsp;·&nbsp; hi@anveshseeli.com &nbsp;·&nbsp; linkedin.com/in/anvesh-seeli &nbsp;·&nbsp; anveshseeli.com
             </p>
           </div>
 
