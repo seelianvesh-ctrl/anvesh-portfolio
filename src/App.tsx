@@ -12,6 +12,7 @@ import Credentials from "./components/Credentials";
 import GrowthNotes from "./components/GrowthNotes";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
+import ResumeGateModal from "./components/ResumeGateModal";
 
 export default function App() {
   return (
@@ -63,6 +64,9 @@ export default function App() {
         {/* 12. Contact CTAs & dark footer */}
         <Contact />
       </main>
+
+      {/* Resume Gate Modal */}
+      <ResumeGateModal resumeUrl="/resume.pdf" />
     </div>
   );
 }
