@@ -3,23 +3,6 @@ import { motion, useReducedMotion } from "motion/react";
 export default function Hero() {
   const shouldReduceMotion = useReducedMotion();
 
-  const handleDownloadResumeClick = () => {
-    if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "resume_download", {
-        location: "hero_section",
-        link_url: "/resume",
-      });
-    }
-  };
-
-  const animationProps = shouldReduceMotion
-    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.5 } }
-    : {
-        initial: { opacity: 0, y: 12 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.7, ease: "easeOut" },
-      };
-
   const handleScrollToWork = () => {
     const element = document.getElementById("work");
     if (element) {
@@ -35,6 +18,14 @@ export default function Hero() {
       });
     }
   };
+
+  const animationProps = shouldReduceMotion
+    ? { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.5 } }
+    : {
+        initial: { opacity: 0, y: 12 },
+        animate: { opacity: 1, y: 0 },
+        transition: { duration: 0.7, ease: "easeOut" },
+      };
 
   return (
     <section className="relative mx-auto max-w-7xl px-6 pt-16 pb-20 md:px-12 md:pt-24 md:pb-28">
@@ -67,28 +58,18 @@ export default function Hero() {
               View Case Studies
             </button>
 
-            <a
-              href="/resume"
-              download="Anvesh_Seeli_Resume.pdf"
-              onClick={handleDownloadResumeClick}
+            <button
+              onClick={() => (window as any).openResumeGate?.()}
               className="rounded border border-hairline bg-cream px-6 py-3 font-serif text-base font-medium text-ink transition-colors duration-200 hover:bg-hairline cursor-pointer"
               id="download-resume-hero"
             >
               Download Resume
-            </a>
+            </button>
 
             <a
               href="https://calendly.com/seelianvesh/30min"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => {
-                if (typeof window !== "undefined" && (window as any).gtag) {
-                  (window as any).gtag("event", "book_call_click", {
-                    location: "hero_section",
-                    link_url: "https://calendly.com/seelianvesh/30min",
-                  });
-                }
-              }}
               className="rounded bg-terracotta px-6 py-3 font-serif text-base font-medium text-cream transition-colors duration-200 hover:bg-terracotta/90 cursor-pointer"
               id="book-call-hero"
             >
