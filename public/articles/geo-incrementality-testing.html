@@ -15,15 +15,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Geo-incrementality testing: how to prove paid media lift | Anvesh Seeli</title>
-  <meta name="description" content="Geo-incrementality testing compares regions where media activity changes with similar regions where it does not. The goal is to estimate what the media act" />
+  <meta name="description" content="Geo-incrementality testing compares regions where media changes with matched regions where it does not, to estimate what your ads truly caused." />
   <link rel="canonical" href="https://anveshseeli.com/articles/geo-incrementality-testing" />
   <meta property="og:type" content="article" />
   <meta property="og:title" content="Geo-incrementality testing: how to prove paid media lift" />
-  <meta property="og:description" content="Geo-incrementality testing compares regions where media activity changes with similar regions where it does not. The goal is to estimate what the media actually caused, not simply " />
+  <meta property="og:description" content="Geo-incrementality testing compares regions where media changes with matched regions where it does not, to estimate what your ads truly caused." />
   <meta property="og:url" content="https://anveshseeli.com/articles/geo-incrementality-testing" />
   <meta property="og:image" content="https://anveshseeli.com/og-anvesh-seeli.jpg" />
   <link rel="stylesheet" href="/articles/style.css" />
-  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Geo-incrementality testing: how to prove paid media lift", "description": "Geo-incrementality testing compares regions where media activity changes with similar regions where it does not. The goal is to estimate what the media actually caused, not simply what a platform attributed to itself.", "author": {"@type": "Person", "name": "Anvesh Seeli", "url": "https://anveshseeli.com"}, "datePublished": "2026-07-02", "dateModified": "2026-07-02", "image": "https://anveshseeli.com/og-anvesh-seeli.jpg", "mainEntityOfPage": "https://anveshseeli.com/articles/geo-incrementality-testing"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is incrementality better than attribution?", "acceptedAnswer": {"@type": "Answer", "text": "It answers a different question. Attribution helps with optimization. Incrementality helps with budget truth."}}, {"@type": "Question", "name": "Can small brands run incrementality tests?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but they may need simpler approaches such as budget pauses, holdouts or pre/post tests with clear caveats."}}, {"@type": "Question", "name": "What is a good incrementality result?", "acceptedAnswer": {"@type": "Answer", "text": "A good result is one that changes a decision: scale, cut, restructure, cap or test further."}}]}]}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Article", "headline": "Geo-incrementality testing: how to prove paid media lift", "description": "Geo-incrementality testing compares regions where media changes with matched regions where it does not, to estimate what your ads truly caused.", "author": {"@type": "Person", "name": "Anvesh Seeli", "url": "https://anveshseeli.com"}, "datePublished": "2026-07-02", "dateModified": "2026-08-05", "image": "https://anveshseeli.com/og-anvesh-seeli.jpg", "mainEntityOfPage": "https://anveshseeli.com/articles/geo-incrementality-testing"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is incrementality better than attribution?", "acceptedAnswer": {"@type": "Answer", "text": "It answers a different question. Attribution helps with optimization. Incrementality helps with budget truth."}}, {"@type": "Question", "name": "How long should a geo-incrementality test run?", "acceptedAnswer": {"@type": "Answer", "text": "Two to three weeks is usually enough in high-volume categories, on top of a matched baseline window before it. Very short tests read noise. Very long tests invite operational drift."}}, {"@type": "Question", "name": "Which channels are most often over-credited?", "acceptedAnswer": {"@type": "Answer", "text": "Retargeting and brand search are the usual suspects. Large public experiments, including eBay's famous brand search pause, found near-zero incremental value there. Treat dashboard credit in these channels with suspicion until your own test says otherwise."}}, {"@type": "Question", "name": "Can small brands run incrementality tests?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but they may need simpler approaches such as budget pauses, holdouts or pre/post tests with clear caveats."}}, {"@type": "Question", "name": "What is a good incrementality result?", "acceptedAnswer": {"@type": "Answer", "text": "A good result is one that changes a decision: scale, cut, restructure, cap or test further."}}]}]}</script>
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SZT3K2E93"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-0SZT3K2E93");</script>
@@ -34,21 +34,33 @@
     <a class="small" href="/articles/">← Articles</a>
     <p class="eyebrow">Performance Marketing Field Notes</p>
     <h1>Geo-incrementality testing: how to prove paid media lift</h1>
-    <div class="meta">By Anvesh Seeli · Performance Marketing & Growth · Updated July 2026</div>
+    <div class="meta">By Anvesh Seeli · Performance Marketing & Growth · Updated August 2026</div>
   </header>
   <main class="wrap">
     <section class="answer"><h2>Direct answer</h2><p>Geo-incrementality testing compares regions where media activity changes with similar regions where it does not. The goal is to estimate what the media actually caused, not simply what a platform attributed to itself.</p></section>
-    
+
 <p>The reason this matters is simple: attribution assigns credit. Incrementality asks what changed.</p>
+
 <h2>Why incrementality became necessary</h2>
-<p>In a large-scale media setup I managed, ad platforms were showing strong numbers. CAC looked good. ROAS looked good. Actual sales were also growing, but the sales growth curve did not fully match the attributed revenue reported by platforms.</p>
-<p>That gap mattered. It did not mean the platforms were useless. It meant the business needed a more honest read of contribution.</p>
-<p>So we designed incrementality tests with control and test groups to understand the actual lift. Once that read was available, budget allocation became clearer. The conversation shifted from “which platform is claiming the most revenue?” to “which activity is creating incremental business impact?”</p>
+
+<p>Between August 2021 and March 2023, I ran new customer acquisition at Domino's Pizza India, with more than ₹7 crore of monthly media spend under review. Every quarter started with the same argument. Meta claimed a strong ROAS. Google claimed its own. Both platforms were often taking credit for the very same order: a customer clicks a Meta ad on Monday, searches the brand name on Google on Tuesday, buys on Wednesday, and both dashboards count the full value of that pizza.</p>
+
+<p>Leadership asked a simpler question than either dashboard could answer: if all of this is truly working, why does total growth not add up to the sum of the claims?</p>
+
+<p>The read we learned to trust came from geo-holdout tests, running real campaigns in some cities and holding matched cities dark. When we measured that way, the genuinely incremental lift on the spend we tested came to roughly 8%. Not the multiples the dashboards implied. That 8% was the number worth defending, and defending it properly is what justified about ₹2 crore of monthly budget for the channels that earned it.</p>
+
+<p>The platforms were not useless. Most of them created real value. But the business needed an honest read of contribution, not a credit-claiming contest. Once the incrementality read existed, the budget conversation changed from "which platform is claiming the most revenue?" to "which activity is creating new business?"</p>
+
 <h2>Why attribution alone is not enough</h2>
-<p>Paid media platforms are designed to optimize and claim credit within their own rules. They are not neutral measurement systems. Retargeting, brand search, affiliates and app campaigns can all look efficient while capturing users who may have converted anyway.</p>
-<p>Attribution is useful for daily optimization. It is not always enough for budget truth.</p>
+
+<p>Paid media platforms are built to optimize and claim credit within their own rules. They are not neutral measurement systems. Retargeting, brand search, affiliates and app campaigns can all look efficient while harvesting users who were already on their way to convert.</p>
+
+<p>Attribution is useful for daily optimization. It is not designed for budget truth.</p>
+
 <h2>When a geo test makes sense</h2>
+
 <p>A geo-incrementality test is useful when:</p>
+
 <ul>
 <li>Budgets are large enough to justify testing</li>
 <li>The business operates across many cities, regions or stores</li>
@@ -57,32 +69,86 @@
 <li>Channels overlap heavily</li>
 <li>The brand needs to defend media budgets with more than platform dashboards</li>
 </ul>
+
 <h2>How a practical geo test works</h2>
+
 <h3>1. Select comparable regions</h3>
-<p>Choose test and control regions with similar baseline sales, order behavior, seasonality, store density and media history. Perfect matches are rare, but obviously unfair comparisons should be avoided.</p>
+
+<p>Choose test and control regions with similar baseline sales, order behavior, seasonality, store density and media history. Never pick cities at random. A useful rule is to check that weekly revenue between the pair moved together over the previous 30 days, with correlation above 0.90. Perfect matches are rare, but obviously unfair comparisons poison everything downstream.</p>
+
 <h3>2. Define the intervention</h3>
+
 <p>Be precise. Are you increasing spend? Pausing a channel? Changing creative? Launching an offer? Testing a new bidding strategy?</p>
+
 <p>If too many things change at once, the test becomes difficult to read.</p>
+
 <h3>3. Decide the KPI before the test</h3>
+
 <p>Choose the primary outcome in advance: orders, first-time customers, revenue, contribution margin, app installs or sample claims.</p>
+
 <p>Do not change the success metric after seeing results.</p>
+
 <h3>4. Watch operations, not just media</h3>
+
 <p>Geo tests can be distorted by stock-outs, store availability, delivery constraints, pricing, weather, local events and competitor activity. Media teams need to talk to operations.</p>
+
 <p>This is especially important in categories where supply and demand can move quickly, such as food delivery and retail.</p>
+
 <h3>5. Read lift, not just movement</h3>
+
 <p>The question is not whether the test region improved. The question is whether it improved more than the control region after accounting for baseline trends.</p>
+
+<h2>The napkin math, end to end</h2>
+
+<p>The mechanics fit on one page. Say you pick Jaipur as the test city and Lucknow as the control, a pair with matching demand patterns. For 14 days you run both cities under normal conditions. Jaipur produces 10,000 orders, Lucknow produces 8,000. Your baseline ratio is 1.25.</p>
+
+<p>Now you switch off retargeting in Jaipur for the next 14 days while Lucknow continues untouched. At the end, Lucknow delivers 8,200 orders. If retargeting were adding nothing, Jaipur should track the ratio and land at 10,250 orders (8,200 x 1.25).</p>
+
+<p>Say Jaipur actually delivers 9,800 orders without retargeting. The gap tells you what retargeting was genuinely adding: 10,250 minus 9,800, or 450 incremental orders over the period.</p>
+
+<p>If that retargeting cost you ₹3,00,000 in Jaipur over the two weeks, the true incremental cost per order is roughly ₹667 (3,00,000 divided by 450). The Ads Manager dashboard would likely have shown you somewhere near ₹120, because it quietly counts orders that would have happened anyway. Same campaign. Same budget. Two truths, and only one of them survives contact with a control city.</p>
+
+<h2>What these tests tend to find</h2>
+
+<p>Run this across channels and a few patterns repeat often enough to plan around, though your own numbers should always outrank anyone's generalisations:</p>
+
+<ul>
+<li>Brand search frequently shows very low incrementality. High-intent searchers often find the organic result anyway. The most famous public case remains eBay's brand keyword pause, which found roughly no measurable loss in sales after spending tens of millions a year.</li>
+<li>Bottom-funnel retargeting is often over-credited, because many retargeted users were already mid-checkout.</li>
+<li>Upper-funnel prospecting and creator-led campaigns tend to look weak in dashboards yet repeatedly show the strongest true lift, because they introduce demand that did not exist yesterday.</li>
+</ul>
+
 <h2>My operating POV</h2>
+
 <p>Incrementality does not have to be academic theatre. It should be practical enough to guide decisions.</p>
-<p>For small budgets, a directional test may be enough. For large budgets, comfort is expensive. The higher the spend, the more important it becomes to know whether media is truly moving the business.</p>
+
+<p>For small budgets, a directional test may be enough. For large budgets, comfort is expensive. The higher the spend, the more valuable a modest, honest lift number becomes, because that is the number a CFO will fund year after year. An 8% lift you can defend is worth more than a 4x ROAS you cannot.</p>
+
 <h2>FAQ</h2>
+
 <h3>Is incrementality better than attribution?</h3>
+
 <p>It answers a different question. Attribution helps with optimization. Incrementality helps with budget truth.</p>
+
+<h3>How long should a geo-incrementality test run?</h3>
+
+<p>Two to three weeks is usually enough in high-volume categories, on top of a matched baseline window before it. Very short tests read noise. Very long tests invite operational drift.</p>
+
+<h3>Which channels are most often over-credited?</h3>
+
+<p>Retargeting and brand search are the usual suspects. Large public experiments, including eBay's famous brand search pause, found near-zero incremental value there. Treat dashboard credit in these channels with suspicion until your own test says otherwise.</p>
+
 <h3>Can small brands run incrementality tests?</h3>
+
 <p>Yes, but they may need simpler approaches such as budget pauses, holdouts or pre/post tests with clear caveats.</p>
+
 <h3>What is a good incrementality result?</h3>
+
 <p>A good result is one that changes a decision: scale, cut, restructure, cap or test further.</p>
+
     <div class="related"><a href="/articles/">More articles</a><a href="/">Portfolio</a><a href="/resume">Download resume</a></div>
   </main>
   <footer><p class="note">Written by Anvesh Seeli. Practical notes on paid media, GA4/GTM measurement, incrementality, CAC, D2C growth and commerce-led acquisition.</p></footer>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a26638c93c893b43',t:'MTc4NTkzNzMxMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"1954b47c125f43f8b4338b3c4f804e4f"}' crossorigin="anonymous"></script>
 </body>
 </html>
