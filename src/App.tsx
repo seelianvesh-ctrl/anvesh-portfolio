@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import BrandStrip from "./components/BrandStrip";
@@ -15,6 +16,15 @@ import Contact from "./components/Contact";
 import ResumeGateModal from "./components/ResumeGateModal";
 
 export default function App() {
+  // Open the resume gate when arriving via /?resume=gate (used by static article pages)
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("resume") === "gate") {
+      const t = setTimeout(() => (window as any).openResumeGate?.(), 350);
+      window.history.replaceState({}, "", "/");
+      return () => clearTimeout(t);
+    }
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-cream text-ink select-none font-body antialiased selection:bg-terracotta/20 selection:text-ink">
       {/* High-fidelity tactile paper noise overlay */}

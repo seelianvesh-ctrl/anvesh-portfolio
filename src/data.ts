@@ -151,6 +151,18 @@ export const CASE_STUDIES: CaseStudy[] = [
 
 export const TIMELINE: TimelineItem[] = [
   {
+    id: "independent-timeline",
+    role: "Growth & Performance Marketing Consultant",
+    company: "Independent Consulting",
+    location: "Remote, India",
+    period: "Feb 2026 – Present",
+    highlights: [
+      "Own end-to-end marketing for four businesses across event planning, dental care, wellness and clothing: paid media, organic marketing, CRM and measurement.",
+      "Run performance marketing, measurement and attribution audits that surface pipeline leaks, delivered with a weekly metrics scorecard and a 90-day roadmap executed with client teams.",
+      "Advise brands on geo-incrementality testing and budget-mix design where historical business data supports test-grade analysis."
+    ]
+  },
+  {
     id: "mars-timeline",
     role: "DDM Program Manager",
     company: "Mars Pet Nutrition",
