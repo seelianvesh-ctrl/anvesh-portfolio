@@ -225,11 +225,11 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     id: "measurement",
-    title: "Measurement & Tracking Review",
+    title: "Measurement & Attribution Audit",
     bestFor: "Teams experiencing conversion discrepancies, GA4 reporting lag, or attribution gaps.",
     whatYouGet: [
-      "Complete GTM & GA4 configuration audit, ensuring custom events align with backend revenue logs.",
-      "Implementation guidelines for GA4 & GTM tracking audits, first-party cookies, and first-party measurement clarity.",
+      "A configuration-level audit of your GA4 and Google Tag Manager setup, ensuring custom events align with backend revenue logs.",
+      "Implementation guidelines for first-party measurement, keeping reporting trustworthy as third-party tracking fades.",
       "Pre-written SQL models and cohort analytics templates to monitor user lifetime value (LTV) and CAC cycles."
     ]
   },
@@ -282,7 +282,7 @@ export const FAQS: FAQItem[] = [
   {
     id: "faq-4",
     question: "Does Anvesh Seeli offer GA4 and GTM tracking audits?",
-    answer: "Yes. Anvesh works on GA4/GTM tracking reviews, attribution sanity checks, funnel measurement audits and source-of-truth reporting structures to help brands understand whether media spend is generating measurable business outcomes."
+    answer: "Yes. Anvesh runs measurement and attribution audits for brands whose budget decisions depend on trustworthy numbers: GA4/GTM tracking reviews, attribution sanity checks and source-of-truth reporting, ending in a clear read on what the media budget should do next."
   },
   {
     id: "faq-5",
