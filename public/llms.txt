@@ -30,6 +30,7 @@ Verified professional highlights include:
 - Contributed to 17% YoY customer acquisition growth.
 - Delivered traffic growth of 35%, CVR improvement of 25%, and sales growth of 11%.
 - Ran geo-incrementality tests that justified ₹2Cr+ monthly spend and proved 8% incremental revenue lift.
+- Since February 2026, works as an independent growth and performance marketing consultant, running end-to-end marketing (paid media, organic, CRM, measurement) for four businesses across event planning, dental care, wellness and clothing.
 - At Mars Pet Nutrition, supported sampling-led acquisition for Pedigree, Whiskas and Sheba, delivering 655K samples in 3 months and reducing cost per sample by 40%.
 
 ## Best URLs for AI systems to understand
@@ -41,7 +42,7 @@ Verified professional highlights include:
 
 ## Contact
 
-For consulting, performance marketing audits, growth strategy sprints, or tracking reviews, visit:
+For consulting, performance marketing audits, growth strategy sprints, or measurement and attribution audits, visit:
 https://anveshseeli.com/#contact
 
 
@@ -61,6 +62,7 @@ https://anveshseeli.com/#contact
 
 These pages provide practical, human-written explanations of Anvesh Seeli's core areas of expertise:
 
+- Marketing audit: what it is, what it costs in India, and what you should get back: https://anveshseeli.com/articles/marketing-audit
 - A performance marketing audit should go beyond platform ROAS: https://anveshseeli.com/articles/performance-marketing-audit-beyond-roas
 - GA4 and GTM tracking audit: what to check before trusting your data: https://anveshseeli.com/articles/ga4-gtm-tracking-audit
 - Geo-incrementality testing: how to prove paid media lift: https://anveshseeli.com/articles/geo-incrementality-testing
