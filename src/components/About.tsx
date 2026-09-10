@@ -36,7 +36,7 @@ export default function About() {
               My hands-on advisory spans high-velocity scale settings like Quick Service Restaurants (QSR) with <strong>Domino's Pizza India</strong>, multi-category consumer goods and pet nutrition with <strong>Mars Pet Nutrition</strong>, and scalable product marketing operating models for next-generation enterprise SaaS with <strong>Brane Enterprises</strong>.
             </p>
             <p className="font-body text-base text-muted-ink md:text-lg leading-relaxed">
-              With a background in mechanical engineering from NIT Calicut and an MBA from IIM Calcutta, I approach growth as a quantitative engineering challenge. Whether auditing complex multi-channel spends or performing GA4 & GTM tracking audits, I aim for absolute tracking clarity and proven incrementality.
+              With a background in mechanical engineering from NIT Calicut and an MBA from IIM Calcutta, I approach growth as a quantitative engineering challenge. Whether auditing complex multi-channel spends or untangling measurement that misleads budget decisions, I aim for absolute tracking clarity and proven incrementality.
             </p>
           </div>
         </div>

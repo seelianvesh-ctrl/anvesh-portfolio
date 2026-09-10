@@ -42,8 +42,8 @@ export default function Capabilities() {
       subtitle: "Attribution & Mathematical Proof",
       description: "Establishing reliable single sources of truth by auditing the tracking layer and proving net-new acquisition via scientific incrementality models.",
       items: [
-        "Google Analytics 4 (GA4) Custom Setups",
-        "GA4 & GTM Tracking Audits",
+        "Analytics & Tracking Architecture",
+        "Marketing Measurement Systems",
         "SQL-based Cohort & Retention Analysis",
         "Power BI & Executive Dashboard Design",
         "Mobile Measurement Partners (Singular, MMP)",

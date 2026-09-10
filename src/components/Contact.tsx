@@ -31,7 +31,7 @@ export default function Contact() {
               Let's engineer your growth pipeline.
             </h2>
             <p className="font-body text-base text-[#E2D9CC]/80 leading-relaxed max-w-md">
-              Whether you want to audit a high-spend account, run GA4 & GTM tracking audits, or require fractional growth management, let's explore how we can align your spend with business margins.
+              Whether you want to audit a high-spend account, fix measurement that is misleading your budgets, or require fractional growth management, let's explore how we can align your spend with business margins.
             </p>
           </div>
 
