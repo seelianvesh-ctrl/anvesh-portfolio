@@ -112,6 +112,40 @@ addSectionHeader('Professional Experience');
 doc.fillColor(COLOR_INK)
    .font('Helvetica-Bold')
    .fontSize(9)
+   .text('Growth & Performance Marketing Consultant', { continued: true })
+   .font('Helvetica-Oblique')
+   .fillColor(COLOR_MUTED)
+   .text(' — Independent Consulting', { continued: true })
+   .font('Helvetica')
+   .text(' '.repeat(28) + 'Feb 2026 – Present', { align: 'right' });
+
+doc.moveDown(0.1);
+doc.font('Helvetica-Oblique')
+   .fontSize(8)
+   .fillColor(COLOR_MUTED)
+   .text('End-to-end growth engagements across paid media, organic marketing, CRM and measurement.');
+
+doc.moveDown(0.2);
+const exp0Bullets = [
+  'Own end-to-end marketing for four businesses across event planning, dental care, wellness and clothing.',
+  'Run performance marketing, measurement and attribution audits that surface pipeline leaks; deliver each with a weekly scorecard and a 90-day roadmap executed with client teams.',
+  'Advise on geo-incrementality testing and budget-mix design where historical business data supports test-grade analysis.'
+];
+exp0Bullets.forEach(b => {
+  doc.fillColor(COLOR_INK)
+     .font('Helvetica')
+     .fontSize(8.5)
+     .text('•  ', { continued: true })
+     .text(b, { lineGap: 1.5 });
+  doc.moveDown(0.15);
+});
+
+doc.moveDown(0.4);
+
+// Exp 2
+doc.fillColor(COLOR_INK)
+   .font('Helvetica-Bold')
+   .fontSize(9)
    .text('DDM Program Manager – Pet Nutrition', { continued: true })
    .font('Helvetica-Oblique')
    .fillColor(COLOR_MUTED)
@@ -143,7 +177,7 @@ exp1Bullets.forEach(b => {
 
 doc.moveDown(0.4);
 
-// Exp 2
+// Exp 3
 doc.fillColor(COLOR_INK)
    .font('Helvetica-Bold')
    .fontSize(9)
@@ -176,7 +210,7 @@ exp2Bullets.forEach(b => {
 
 doc.moveDown(0.4);
 
-// Exp 3
+// Exp 4
 doc.fillColor(COLOR_INK)
    .font('Helvetica-Bold')
    .fontSize(9)
@@ -210,7 +244,7 @@ exp3Bullets.forEach(b => {
 
 doc.moveDown(0.4);
 
-// Exp 4
+// Exp 5
 doc.fillColor(COLOR_INK)
    .font('Helvetica-Bold')
    .fontSize(9)
@@ -327,9 +361,7 @@ doc.fillColor(COLOR_INK)
 doc.end();
 
 writeStream.on('finish', () => {
-  const shortOutputPath = path.join(__dirname, 'public', 'resume.pdf, and resume');
-  const cleanOutputPath = path.join(__dirname, 'public', 'resume');
-  fs.copyFileSync(outputPath, shortOutputPath);
-  fs.copyFileSync(outputPath, cleanOutputPath);
-  console.log('PDF generation complete! Wrote Anvesh_Seeli_Resume.pdf and resume.pdf, and resume');
+  fs.copyFileSync(outputPath, path.join(__dirname, 'public', 'resume.pdf'));
+  fs.copyFileSync(outputPath, path.join(__dirname, 'public', 'resume'));
+  console.log('PDF generation complete! Wrote Anvesh_Seeli_Resume.pdf, resume.pdf and resume');
 });
