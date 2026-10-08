@@ -81,50 +81,58 @@ export default function ResumeGateModal({ resumeUrl = '/resume.pdf', onSuccess }
 
   if (!isOpen) return null;
 
-  const inputCls = "w-full px-4 py-3 rounded-xl text-sm text-ink placeholder:text-[#8d8071] focus:outline-none focus:border-terracotta focus:ring-2 focus:ring-terracotta/25 transition-colors";
-  const inputStyle = { background: '#FFFDF9', border: '1px solid #E2D9CC' };
-  const labelCls = "block text-sm font-medium mb-1.5 text-ink";
+  const inputCls = "w-full border border-hairline bg-paper px-3.5 py-3 font-body text-[0.92rem] text-ink placeholder:text-[#8d8071] transition-colors duration-200 focus:border-terracotta focus:outline-none";
+  const labelCls = "mb-1.5 block font-mono text-[10px] uppercase tracking-[0.14em] text-muted-ink";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: 'rgba(31,27,23,0.55)', backdropFilter: 'blur(5px)' }} onClick={(e) => e.target === e.currentTarget && closeModal()}>
-      <div className="relative w-full max-w-md rounded-2xl p-8 bg-cream" style={{ border: '1px solid #E2D9CC', boxShadow: '0 24px 60px rgba(31,27,23,0.28)' }}>
-        <button onClick={closeModal} aria-label="Close" className="absolute top-4 right-4 p-2 rounded-lg text-muted-ink" onMouseEnter={(e) => e.currentTarget.style.background = '#EAE2D6'} onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    <div
+      className="fixed inset-0 z-[80] flex items-center justify-center overflow-y-auto p-4 py-10"
+      style={{ background: 'rgba(31,27,23,0.6)', backdropFilter: 'blur(6px)' }}
+      onClick={(e) => e.target === e.currentTarget && closeModal()}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Get My Resume"
+    >
+      <div className="relative w-full max-w-md border border-hairline bg-cream px-7 py-8 md:px-9" style={{ boxShadow: '0 30px 70px rgba(31,27,23,0.3)' }}>
+        <button
+          onClick={closeModal}
+          aria-label="Close"
+          className="absolute right-4 top-4 flex h-9 w-9 cursor-pointer items-center justify-center text-muted-ink transition-colors hover:text-ink"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.25"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
 
         {isSuccess ? (
-          <div className="text-center py-4">
-            <div className="w-20 h-20 rounded-full mx-auto mb-6 flex items-center justify-center" style={{ background: 'rgba(178,74,46,0.12)' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#B24A2E" strokeWidth="2"><polyline points="20,6 9,17 4,12"/></svg>
+          <div className="py-6 text-center">
+            <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center border border-hairline" style={{ background: 'rgba(178,74,46,0.08)' }}>
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B24A2E" strokeWidth="1.25"><polyline points="20,6 9,17 4,12"/></svg>
             </div>
-            <h3 className="font-serif text-2xl text-ink mb-2">You're all set!</h3>
-            <p className="text-muted-ink text-sm mb-6">Your resume is downloading now.</p>
-            <button onClick={closeModal} className="px-6 py-2 rounded-lg bg-deep-charcoal text-cream text-sm font-semibold">Close</button>
+            <h3 className="font-serif text-2xl font-medium text-ink mb-2">You&apos;re all set!</h3>
+            <p className="font-body text-[0.95rem] text-muted-ink mb-7">Your resume is downloading now.</p>
+            <button onClick={closeModal} className="bg-ink px-6 py-3 font-mono text-[10.5px] uppercase tracking-[0.16em] text-cream transition-colors hover:bg-terracotta cursor-pointer">Close</button>
           </div>
         ) : (
           <>
-            <div className="text-center mb-6">
-              <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center" style={{ background: 'rgba(178,74,46,0.12)' }}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#B24A2E" strokeWidth="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-              </div>
-              <h2 className="font-serif text-2xl text-ink mb-1">Get My Resume</h2>
-              <p className="text-muted-ink text-sm">Share your details to access the full resume</p>
+            <div className="mb-7 border-b border-hairline pb-6">
+              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-terracotta">Resume</p>
+              <h2 className="mt-3 font-serif text-[1.7rem] font-medium leading-tight text-ink">Get My Resume</h2>
+              <p className="mt-2 font-body text-[0.92rem] text-muted-ink">Share your details to access the full resume</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className={labelCls}>Work Email <span className="text-terracotta">*</span></label>
-                <input type="email" value={email} onChange={(e) => { setEmail(e.target.value); setEmailError(''); }} onBlur={handleEmailBlur} placeholder="you@company.com" required className={inputCls} style={{ ...inputStyle, border: emailError ? '1px solid #B24A2E' : '1px solid #E2D9CC' }}/>
-                {emailError && <p className="text-terracotta text-xs mt-1">{emailError}</p>}
+                <label className={labelCls} htmlFor="resume-gate-email">Work Email <span className="text-terracotta">*</span></label>
+                <input id="resume-gate-email" type="email" value={email} onChange={(e) => { setEmail(e.target.value); setEmailError(''); }} onBlur={handleEmailBlur} placeholder="you@company.com" required className={inputCls} style={{ borderColor: emailError ? '#B24A2E' : undefined }}/>
+                {emailError && <p className="mt-1.5 font-body text-xs text-terracotta">{emailError}</p>}
               </div>
               <div>
-                <label className={labelCls}>Company <span className="text-terracotta">*</span></label>
-                <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} placeholder="Your organization" required className={inputCls} style={inputStyle}/>
+                <label className={labelCls} htmlFor="resume-gate-company">Company <span className="text-terracotta">*</span></label>
+                <input id="resume-gate-company" type="text" value={company} onChange={(e) => setCompany(e.target.value)} placeholder="Your organization" required className={inputCls}/>
               </div>
               <div>
-                <label className={labelCls}>I'm reaching out as a...</label>
+                <label className={labelCls} htmlFor="resume-gate-role">I&apos;m reaching out as a...</label>
                 <div className="relative">
-                  <select value={role} onChange={(e) => setRole(e.target.value)} className={inputCls + " appearance-none cursor-pointer pr-10"} style={inputStyle}>
+                  <select id="resume-gate-role" value={role} onChange={(e) => setRole(e.target.value)} className={inputCls + " cursor-pointer appearance-none pr-10"}>
                     <option value="">Select your role</option>
                     <option value="founder">Founder / CEO</option>
                     <option value="marketing">Marketing Leader</option>
@@ -134,13 +142,13 @@ export default function ResumeGateModal({ resumeUrl = '/resume.pdf', onSuccess }
                     <option value="investor">Investor</option>
                     <option value="other">Other</option>
                   </select>
-                  <svg className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5C5248" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  <svg className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5C5248" strokeWidth="1.5"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
               </div>
               <div>
-                <label className={labelCls}>What brings you here?</label>
+                <label className={labelCls} htmlFor="resume-gate-purpose">What brings you here?</label>
                 <div className="relative">
-                  <select value={purpose} onChange={(e) => setPurpose(e.target.value)} className={inputCls + " appearance-none cursor-pointer pr-10"} style={inputStyle}>
+                  <select id="resume-gate-purpose" value={purpose} onChange={(e) => setPurpose(e.target.value)} className={inputCls + " cursor-pointer appearance-none pr-10"}>
                     <option value="">Select one (optional)</option>
                     <option value="consulting">Consulting / Advisory</option>
                     <option value="hire">Hiring for a role</option>
@@ -148,29 +156,46 @@ export default function ResumeGateModal({ resumeUrl = '/resume.pdf', onSuccess }
                     <option value="collab">Collaboration</option>
                     <option value="curious">Just exploring</option>
                   </select>
-                  <svg className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5C5248" strokeWidth="2"><polyline points="6 9 12 15 18 9"/></svg>
+                  <svg className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#5C5248" strokeWidth="1.5"><polyline points="6 9 12 15 18 9"/></svg>
                 </div>
               </div>
               <div>
-                <label className="flex items-center gap-3 cursor-pointer">
+                <label className="flex cursor-pointer items-center gap-3">
                   <input type="checkbox" checked={callback} onChange={(e) => setCallback(e.target.checked)} className="sr-only"/>
-                  <span className="w-5 h-5 rounded flex items-center justify-center transition-colors" style={{ border: `2px solid ${callback ? '#B24A2E' : '#C9BCA8'}`, background: callback ? '#B24A2E' : 'transparent' }}>
-                    {callback && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#F7F3EC" strokeWidth="3"><polyline points="20,6 9,17 4,12"/></svg>}
+                  <span
+                    className="flex h-[18px] w-[18px] items-center justify-center border transition-colors duration-200"
+                    style={{ borderColor: callback ? '#B24A2E' : '#C9BCA8', background: callback ? '#B24A2E' : 'transparent' }}
+                  >
+                    {callback && <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#F7F3EC" strokeWidth="3"><polyline points="20,6 9,17 4,12"/></svg>}
                   </span>
-                  <span className="text-sm text-muted-ink">I'd like a callback to discuss further</span>
+                  <span className="font-body text-[0.9rem] text-muted-ink">I&apos;d like a callback to discuss further</span>
                 </label>
               </div>
               {callback && (
                 <div>
-                  <label className={labelCls}>Phone <span className="text-muted-ink font-normal">(optional)</span></label>
-                  <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 98XXX XXXXX" className={inputCls} style={inputStyle}/>
+                  <label className={labelCls} htmlFor="resume-gate-phone">Phone <span className="text-muted-ink/70">(optional)</span></label>
+                  <input id="resume-gate-phone" type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="+91 98XXX XXXXX" className={inputCls}/>
                 </div>
               )}
-              <button type="submit" disabled={isLoading} className="w-full py-3.5 rounded-xl font-semibold text-cream transition-colors mt-2 bg-terracotta hover:bg-[#A8431F]" style={{ opacity: isLoading ? 0.7 : 1 }}>
-                {isLoading ? <span className="flex items-center justify-center gap-2"><svg className="animate-spin w-5 h-5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" fill="none" strokeDasharray="31.4 31.4"/></svg>Submitting...</span> : 'Download Resume'}
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="mt-2 flex w-full cursor-pointer items-center justify-center gap-2 bg-terracotta py-3.5 font-mono text-[11px] uppercase tracking-[0.16em] text-cream transition-colors duration-300 hover:bg-[#a8431f] disabled:cursor-wait disabled:opacity-70"
+              >
+                {isLoading ? (
+                  <>
+                    <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" fill="none" strokeDasharray="31.4 31.4"/></svg>
+                    Submitting...
+                  </>
+                ) : (
+                  'Download Resume'
+                )}
               </button>
             </form>
-            <p className="flex items-center justify-center gap-2 text-xs text-muted-ink mt-4"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Your information is secure and will only be used to personalize our conversation.</p>
+            <p className="mt-5 flex items-center justify-center gap-2 font-body text-[0.78rem] text-muted-ink">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Your information is secure and will only be used to personalize our conversation.
+            </p>
           </>
         )}
       </div>
