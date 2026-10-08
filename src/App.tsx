@@ -14,27 +14,52 @@ import GrowthNotes from "./components/GrowthNotes";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import ResumeGateModal from "./components/ResumeGateModal";
+import ScrollProgress from "./components/ui/ScrollProgress";
+import ChapterRail from "./components/ui/ChapterRail";
+import { startScrollTracking } from "./lib/scroll";
+
+/** Chapters the header and the rail both track. */
+const CHAPTER_IDS = [
+  "work",
+  "capabilities",
+  "services",
+  "timeline",
+  "credentials",
+  "contact",
+];
 
 export default function App() {
   // Open the resume gate when arriving via /?resume=gate (used by static article pages)
   useEffect(() => {
     if (new URLSearchParams(window.location.search).get("resume") === "gate") {
-      const t = setTimeout(() => (window as any).openResumeGate?.(), 350);
+      const timer = setTimeout(
+        () =>
+          (
+            window as unknown as { openResumeGate?: () => void }
+          ).openResumeGate?.(),
+        350,
+      );
       window.history.replaceState({}, "", "/");
-      return () => clearTimeout(t);
+      return () => clearTimeout(timer);
     }
   }, []);
 
-  return (
-    <div className="relative min-h-screen bg-cream text-ink select-none font-body antialiased selection:bg-terracotta/20 selection:text-ink">
-      {/* High-fidelity tactile paper noise overlay */}
-      <div className="paper-grain" />
+  // One scroll subscription for the header and chapter rail.
+  useEffect(() => startScrollTracking(CHAPTER_IDS), []);
 
-      {/* Slim, sticky navigation bar */}
+  return (
+    <div className="relative min-h-screen bg-cream font-body text-ink antialiased">
+      {/* High-fidelity tactile paper noise overlay */}
+      <div className="paper-grain" aria-hidden="true" />
+
+      <a href="#main" className="skip-link no-print">
+        Skip to content
+      </a>
+
+      <ScrollProgress />
       <Header />
 
-      {/* Main Container */}
-      <main className="relative z-10">
+      <main id="main" className="relative z-10">
         {/* 1. Hero banner with high-impact serif headline and key stats */}
         <Hero />
 
@@ -50,7 +75,7 @@ export default function App() {
         {/* 4. Core capabilities structured columns */}
         <Capabilities />
 
-        {/* 5. Interactive accordion-style case studies */}
+        {/* 5. Case ledger — every file stays in the document */}
         <SelectedWork />
 
         {/* 6. Growth operating system 5-step numbered framework */}
@@ -68,12 +93,14 @@ export default function App() {
         {/* 10. Brief notes, observations, and advice on incrementality */}
         <GrowthNotes />
 
-        {/* 11. FAQ collapsible accordions */}
+        {/* 11. FAQ — answers remain mounted for crawlers and find-in-page */}
         <FAQ />
 
         {/* 12. Contact CTAs & dark footer */}
         <Contact />
       </main>
+
+      <ChapterRail />
 
       {/* Resume Gate Modal */}
       <ResumeGateModal resumeUrl="/resume.pdf" />

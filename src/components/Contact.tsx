@@ -1,207 +1,225 @@
-import { motion, useReducedMotion } from "motion/react";
-import { Mail, Linkedin, Calendar, ArrowUpRight, Instagram, Github, Globe } from "lucide-react";
+import { motion } from "motion/react";
+import {
+  ArrowUpRight,
+  Calendar,
+  Github,
+  Globe,
+  Instagram,
+  Linkedin,
+  Mail,
+} from "lucide-react";
+import { useReveal, track } from "../lib/motion";
 
+const BOOKING_URL = "https://calendly.com/seelianvesh/30min";
+
+/**
+ * Closing panel: the three ways to start, set as full-width rows that flood
+ * terracotta on hover. Same links, same analytics events as before.
+ */
 export default function Contact() {
-  const shouldReduceMotion = useReducedMotion();
-
-  const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  const animationProps = shouldReduceMotion
-    ? { initial: { opacity: 0 }, whileInView: { opacity: 1 }, viewport: { once: true } }
-    : {
-        initial: { opacity: 0, y: 12 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true, margin: "-80px" },
-        transition: { duration: 0.7, ease: "easeOut" }
-      };
+  const heading = useReveal({ distance: 16 });
+  const rows = useReveal({ distance: 16, delay: 0.08 });
 
   return (
-    <section id="contact" className="relative bg-deep-charcoal text-cream overflow-hidden">
-      {/* Upper Connect Panel */}
-      <div className="mx-auto max-w-7xl px-6 py-20 md:px-12 md:py-28">
-        <motion.div {...animationProps} className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-8">
-          {/* Headline Column (Column 1-7) */}
-          <div className="lg:col-span-7 space-y-6">
-            <span className="font-serif text-xs uppercase tracking-widest text-[#E2D9CC]">
-              Collaboration
-            </span>
-            <h2 className="font-serif text-3xl leading-tight font-normal text-cream md:text-5xl max-w-xl" id="contact-heading">
-              Let's engineer your growth pipeline.
+    <section id="contact" className="dark-band relative bg-deep-charcoal text-cream">
+      <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-28 lg:px-14">
+        <motion.div
+          {...heading}
+          className="grid gap-x-14 gap-y-12 lg:grid-cols-12"
+        >
+          <div className="lg:col-span-6">
+            <p className="eyebrow text-[#E2D9CC]/70">Collaboration</p>
+            <h2
+              id="contact-heading"
+              className="display-2 mt-5 max-w-[24rem] text-cream"
+            >
+              Let&apos;s engineer your growth pipeline.
             </h2>
-            <p className="font-body text-base text-[#E2D9CC]/80 leading-relaxed max-w-md">
-              Whether you want to audit a high-spend account, fix measurement that is misleading your budgets, or require fractional growth management, let's explore how we can align your spend with business margins.
+            <p className="mt-6 max-w-[26rem] font-body text-[1rem] leading-relaxed text-[#E2D9CC]/80">
+              Whether you want to audit a high-spend account, fix measurement
+              that is misleading your budgets, or require fractional growth
+              management, let&apos;s explore how we can align your spend with
+              business margins.
             </p>
           </div>
 
-          {/* Touchpoints Column (Column 8-12) */}
-          <div className="lg:col-span-5 flex flex-col justify-center space-y-6 lg:pl-12" id="contact-touchpoints">
-            {/* Calendly booking CTA */}
-            <a
-              href="https://calendly.com/seelianvesh/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                if (typeof window !== "undefined" && (window as any).gtag) {
-                  (window as any).gtag("event", "book_call_click", {
-                    location: "contact_section",
-                    link_url: "https://calendly.com/seelianvesh/30min",
-                  });
-                }
-              }}
-              className="group flex items-center justify-between rounded bg-terracotta p-5 transition-all duration-300 hover:bg-terracotta/90"
+          <div
+            id="contact-touchpoints"
+            className="flex flex-col lg:col-span-6 lg:pl-6"
+          >
+            <Row
               id="calendly-button"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cream/15 text-cream">
-                  <Calendar size={18} />
-                </div>
-                <div className="text-left">
-                  <span className="font-serif text-xs uppercase tracking-widest text-[#F7F3EC]/70 block">
-                    Introductory Session
-                  </span>
-                  <span className="font-serif text-lg font-medium text-cream">
-                    Book a 30-Min Call
-                  </span>
-                </div>
-              </div>
-              <ArrowUpRight size={20} className="text-cream transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </a>
-
-            {/* Email direct contact */}
-            <a
-              href="mailto:hi@anveshseeli.com"
-              onClick={() => {
-                if (typeof window !== "undefined" && (window as any).gtag) {
-                  (window as any).gtag("event", "email_click");
-                }
-              }}
-              className="group flex items-center justify-between rounded border border-hairline/20 bg-cream/5 p-5 transition-all duration-300 hover:bg-cream/10"
+              href={BOOKING_URL}
+              external
+              icon={<Calendar size={16} strokeWidth={1.25} />}
+              kicker="Introductory Session"
+              label="Book a 30-Min Call"
+              onClick={() =>
+                track("book_call_click", {
+                  location: "contact_section",
+                  link_url: BOOKING_URL,
+                })
+              }
+            />
+            <Row
               id="email-button"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cream/15 text-cream">
-                  <Mail size={18} />
-                </div>
-                <div className="text-left">
-                  <span className="font-serif text-xs uppercase tracking-widest text-[#F7F3EC]/70 block">
-                    Direct Inquiry
-                  </span>
-                  <span className="font-serif text-base font-normal text-cream">
-                    hi@anveshseeli.com
-                  </span>
-                </div>
-              </div>
-              <ArrowUpRight size={18} className="text-[#E2D9CC]/60 group-hover:text-cream transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
-
-            {/* LinkedIn social channel */}
-            <a
-              href="https://www.linkedin.com/in/anvesh-seeli/"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                if (typeof window !== "undefined" && (window as any).gtag) {
-                  (window as any).gtag("event", "linkedin_click");
-                }
-              }}
-              className="group flex items-center justify-between rounded border border-hairline/20 bg-cream/5 p-5 transition-all duration-300 hover:bg-cream/10"
+              href="mailto:hi@anveshseeli.com"
+              icon={<Mail size={16} strokeWidth={1.25} />}
+              kicker="Direct Inquiry"
+              label="hi@anveshseeli.com"
+              onClick={() => track("email_click")}
+            />
+            <Row
               id="linkedin-button"
-            >
-              <div className="flex items-center space-x-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-cream/15 text-cream">
-                  <Linkedin size={18} />
-                </div>
-                <div className="text-left">
-                  <span className="font-serif text-xs uppercase tracking-widest text-[#F7F3EC]/70 block">
-                    Professional Network
-                  </span>
-                  <span className="font-serif text-base font-normal text-cream">
-                    LinkedIn Profile
-                  </span>
-                </div>
-              </div>
-              <ArrowUpRight size={18} className="text-[#E2D9CC]/60 group-hover:text-cream transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
+              href="https://www.linkedin.com/in/anvesh-seeli/"
+              external
+              icon={<Linkedin size={16} strokeWidth={1.25} />}
+              kicker="Professional Network"
+              label="LinkedIn Profile"
+              onClick={() => track("linkedin_click")}
+            />
+          </div>
+        </motion.div>
 
-            {/* Secondary profiles: Instagram, GitHub, Bold.pro */}
-            <div className="border-t border-hairline/15 pt-5">
-              <span className="font-serif text-xs uppercase tracking-widest text-[#F7F3EC]/70 block mb-3">
-                Elsewhere
-              </span>
-              <div className="flex flex-wrap gap-3" id="social-links">
-                <a
-                  href="https://www.instagram.com/the_performanceengineer/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    if (typeof window !== "undefined" && (window as any).gtag) {
-                      (window as any).gtag("event", "instagram_click");
-                    }
-                  }}
-                  className="group flex items-center gap-2 rounded border border-hairline/20 bg-cream/5 px-4 py-2.5 font-body text-sm text-cream transition-all duration-300 hover:bg-cream/10"
-                  id="instagram-link"
-                >
-                  <Instagram size={15} className="text-[#E2D9CC]/70 group-hover:text-cream transition-colors" />
-                  <span>Instagram</span>
-                </a>
-                <a
-                  href="https://github.com/seelianvesh-ctrl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    if (typeof window !== "undefined" && (window as any).gtag) {
-                      (window as any).gtag("event", "github_click");
-                    }
-                  }}
-                  className="group flex items-center gap-2 rounded border border-hairline/20 bg-cream/5 px-4 py-2.5 font-body text-sm text-cream transition-all duration-300 hover:bg-cream/10"
-                  id="github-link"
-                >
-                  <Github size={15} className="text-[#E2D9CC]/70 group-hover:text-cream transition-colors" />
-                  <span>GitHub</span>
-                </a>
-                <a
-                  href="https://in.bold.pro/my/anvesh-seeli-240819164718"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => {
-                    if (typeof window !== "undefined" && (window as any).gtag) {
-                      (window as any).gtag("event", "boldpro_click");
-                    }
-                  }}
-                  className="group flex items-center gap-2 rounded border border-hairline/20 bg-cream/5 px-4 py-2.5 font-body text-sm text-cream transition-all duration-300 hover:bg-cream/10"
-                  id="boldpro-link"
-                >
-                  <Globe size={15} className="text-[#E2D9CC]/70 group-hover:text-cream transition-colors" />
-                  <span>Bold.pro</span>
-                </a>
-              </div>
-            </div>
+        <motion.div
+          {...rows}
+          className="mt-16 border-t border-[#E2D9CC]/15 pt-8"
+        >
+          <p className="eyebrow text-[#E2D9CC]/60">Elsewhere</p>
+          <div id="social-links" className="mt-5 flex flex-wrap gap-3">
+            <Chip
+              id="instagram-link"
+              href="https://www.instagram.com/the_performanceengineer/"
+              icon={<Instagram size={14} strokeWidth={1.25} />}
+              label="Instagram"
+              onClick={() => track("instagram_click")}
+            />
+            <Chip
+              id="github-link"
+              href="https://github.com/seelianvesh-ctrl"
+              icon={<Github size={14} strokeWidth={1.25} />}
+              label="GitHub"
+              onClick={() => track("github_click")}
+            />
+            <Chip
+              id="boldpro-link"
+              href="https://in.bold.pro/my/anvesh-seeli-240819164718"
+              icon={<Globe size={14} strokeWidth={1.25} />}
+              label="Bold.pro"
+              onClick={() => track("boldpro_click")}
+            />
           </div>
         </motion.div>
       </div>
 
-      {/* Deep Footer Line */}
-      <div className="border-t border-hairline/15 bg-[#1F1B17] py-8 text-xs text-[#E2D9CC]/50">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 md:flex-row md:px-12">
-          <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4 text-center md:text-left">
-            <span className="font-serif text-sm font-semibold text-cream">Anvesh Seeli</span>
-            <span className="hidden md:inline-block text-[#E2D9CC]/25">|</span>
-            <span className="font-body text-xs">Performance Marketing & Growth Consultant</span>
+      <div className="border-t border-[#E2D9CC]/15 bg-ink">
+        <div className="mx-auto flex max-w-[1440px] flex-col justify-between gap-4 px-6 py-8 text-[#E2D9CC]/55 md:flex-row md:items-center md:px-10 lg:px-14">
+          <div className="flex flex-col gap-1.5 md:flex-row md:items-center md:gap-4">
+            <span className="font-serif text-[1.05rem] font-medium text-cream">
+              Anvesh Seeli
+            </span>
+            <span className="hidden h-4 w-px bg-[#E2D9CC]/20 md:block" />
+            <span className="font-mono text-[10.5px] uppercase tracking-[0.14em]">
+              Performance Marketing &amp; Growth Consultant
+            </span>
           </div>
-          <div className="flex items-center gap-4 text-center md:text-right">
+          <div className="flex items-center gap-5 font-mono text-[10.5px] uppercase tracking-[0.14em]">
             <span>Based in India.</span>
             <button
-              onClick={handleScrollToTop}
-              className="hover:text-cream cursor-pointer transition-colors duration-200"
+              type="button"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="group flex cursor-pointer items-center gap-2 transition-colors duration-300 hover:text-cream"
               aria-label="Back to top"
             >
-              Back to Top ↑
+              Back to Top
+              <span
+                aria-hidden="true"
+                className="transition-transform duration-300 group-hover:-translate-y-1"
+              >
+                ↑
+              </span>
             </button>
           </div>
         </div>
       </div>
     </section>
+  );
+}
+
+function Row({
+  id,
+  href,
+  icon,
+  kicker,
+  label,
+  onClick,
+  external = false,
+}: {
+  id: string;
+  href: string;
+  icon: React.ReactNode;
+  kicker: string;
+  label: string;
+  onClick: () => void;
+  external?: boolean;
+}) {
+  return (
+    <a
+      id={id}
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      onClick={onClick}
+      className="fill-row group flex items-center justify-between gap-6 border-b border-[#E2D9CC]/15 py-6"
+    >
+      <span className="flex min-w-0 items-center gap-5 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2">
+        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#E2D9CC]/25 text-[#E2D9CC]/80 transition-colors duration-500 group-hover:border-cream group-hover:text-cream">
+          {icon}
+        </span>
+        <span className="flex min-w-0 flex-col gap-1">
+          <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-[#E2D9CC]/60 transition-colors duration-500 group-hover:text-cream/80">
+            {kicker}
+          </span>
+          <span className="truncate font-serif text-[1.05rem] font-medium text-cream md:text-[1.15rem]">
+            {label}
+          </span>
+        </span>
+      </span>
+      <ArrowUpRight
+        size={18}
+        strokeWidth={1.25}
+        className="shrink-0 text-[#E2D9CC]/60 transition-all duration-500 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-cream"
+      />
+    </a>
+  );
+}
+
+function Chip({
+  id,
+  href,
+  icon,
+  label,
+  onClick,
+}: {
+  id: string;
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+  onClick: () => void;
+}) {
+  return (
+    <a
+      id={id}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      onClick={onClick}
+      className="group flex items-center gap-2.5 border border-[#E2D9CC]/20 px-4 py-2.5 font-mono text-[10.5px] uppercase tracking-[0.14em] text-[#E2D9CC]/80 transition-colors duration-300 hover:border-cream hover:text-cream"
+    >
+      <span className="transition-colors duration-300 group-hover:text-ember">
+        {icon}
+      </span>
+      {label}
+    </a>
   );
 }
