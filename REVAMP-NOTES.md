@@ -210,10 +210,15 @@ silently: every file in `public/articles/` must be listed in the sitemap, and
 every article must link to at least two siblings. The second guard immediately
 caught `sampling-led-acquisition` sitting at one link.
 
-**`netlify.toml`** now pins the build (command, publish dir, Node 20) instead of
-leaving it to the Netlify UI, and adds immutable caching for hashed assets.
-`package.json` pins `engines.node`. **Check the UI values match before merging** —
-a `netlify.toml` overrides UI settings.
+**Deploy config stays in the Cloudflare Pages dashboard.** The site is hosted on
+Cloudflare Pages (project `anvesh-portfolio`), which is why `_redirects` and
+`_headers` live in `public/` — Pages reads both from the publish root, so
+`dist/_redirects` and `dist/_headers` are picked up automatically. Build command
+and output directory are set in the dashboard; nothing in the repo needs to
+change, and `package.json` documents the Node requirement via `engines`.
+
+An earlier revision of this branch added a `netlify.toml`. It was removed: the
+deploy target is Cloudflare, so the file would have done nothing.
 
 ## 9. Notes
 
